@@ -17,20 +17,26 @@
   <div id="app">
 
     <header class="bg-dark py-3">
-      <div class="container d-flex justify-content-between align-items-center">
-        <img src="./assets/logo-small.svg" alt="Logo" class="logo">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <img src="./assets/logo-small.svg" alt="Logo" class="logo">
 
-        <i v-if="!showForm" @click="toggleForm" id="add-icon" class="bi bi-plus-circle text-light"></i>
-        
-        <form v-if="showForm" action="./functions/albums.php" method="post" class="d-flex">
-          <input type="text" name="title" placeholder="Titolo" class="form-control me-2" required>
-          <input type="text" name="author" placeholder="Autore" class="form-control me-2" required>
-          <input type="number" name="year" placeholder="Anno" class="form-control me-2" required>
-          <input type="text" name="genre" placeholder="Genere" class="form-control me-2" required>
-          <input type="text" name="poster" placeholder="URL Poster" class="form-control me-2" required>
-          <button type="submit" class="btn btn-success me-2">Aggiungi</button>
-          <button type="button" @click="toggleForm" class="btn btn-secondary">Annulla</button>
-        </form>
+          <button class="navbar-toggler text-light border-0" type="button" data-bs-toggle="collapse" data-bs-target="#albumFormCollapse" aria-controls="albumFormCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-plus-circle" style="font-size: 2rem;"></i>
+          </button>
+        </div>
+
+        <div class="collapse" id="albumFormCollapse">
+          <form action="./functions/albums.php" method="post" class="d-flex flex-wrap mt-3">
+            <input type="text" name="title" placeholder="Titolo" class="form-control me-2 mb-2" required>
+            <input type="text" name="author" placeholder="Autore" class="form-control me-2 mb-2" required>
+            <input type="number" name="year" placeholder="Anno" class="form-control me-2 mb-2" required>
+            <input type="text" name="genre" placeholder="Genere" class="form-control me-2 mb-2" required>
+            <input type="text" name="poster" placeholder="URL Poster" class="form-control me-2 mb-2" required>
+            <button type="submit" class="btn btn-success me-2 mb-2">Aggiungi</button>
+            <button type="button" @click="toggleForm" class="btn btn-secondary mb-2">Annulla</button>
+          </form>
+        </div>
       </div>
     </header>
 
