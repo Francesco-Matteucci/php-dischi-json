@@ -26,6 +26,11 @@ h1 {
     font-weight: bold;
 }
 
+#add-icon {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
 .card {
     background-color: var(--bg-card);
     border: none;

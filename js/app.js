@@ -5,12 +5,17 @@ createApp({
     return {
         // Lista dei dischi che verrà popolata tramite la chiamata API
       albums: [],
-      selectedAlbum: {}
+      selectedAlbum: {},
+      showForm: false
     };
   },
   methods: {
     showAlbumDetails(album) {
       this.selectedAlbum = album;
+    },
+    // Mostro o nascondo il form per l'aggiunta di nuovi album
+    toggleForm() {
+      this.showForm = !this.showForm;
     }
   },
   mounted() {

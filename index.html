@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PHP Dischi JSON</title>
   <!-- Bootstrap style -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <!-- Custom style -->
   <link rel="stylesheet" href="./style/style.css">
 </head>
@@ -16,8 +17,20 @@
   <div id="app">
 
     <header class="bg-dark py-3">
-      <div class="container d-flex justify-content-start align-items-center">
+      <div class="container d-flex justify-content-between align-items-center">
         <img src="./assets/logo-small.svg" alt="Logo" class="logo">
+
+        <i v-if="!showForm" @click="toggleForm" id="add-icon" class="bi bi-plus-circle text-light"></i>
+        
+        <form v-if="showForm" action="./functions/albums.php" method="post" class="d-flex">
+          <input type="text" name="title" placeholder="Titolo" class="form-control me-2" required>
+          <input type="text" name="author" placeholder="Autore" class="form-control me-2" required>
+          <input type="number" name="year" placeholder="Anno" class="form-control me-2" required>
+          <input type="text" name="genre" placeholder="Genere" class="form-control me-2" required>
+          <input type="text" name="poster" placeholder="URL Poster" class="form-control me-2" required>
+          <button type="submit" class="btn btn-success me-2">Aggiungi</button>
+          <button type="button" @click="toggleForm" class="btn btn-secondary">Annulla</button>
+        </form>
       </div>
     </header>
 
