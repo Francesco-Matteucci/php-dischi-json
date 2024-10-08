@@ -1,0 +1,54 @@
+:root {
+    --bg-main: #1e2a38;
+    --bg-header: #121d28;
+    --bg-card: #2b3a4b;
+    --color-text: #ffffff;
+    --color-text-secondary: #b0b8c1;
+    --color-border: #4b4b4b;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--color-text);
+}
+
+header {
+    background-color: var(--bg-header);
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+h1 {
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    color: var(--color-text);
+}
+
+.card-text {
+    color: var(--color-text-secondary);
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    color: var(--color-text);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--color-border);
+}
