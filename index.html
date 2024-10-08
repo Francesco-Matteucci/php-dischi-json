@@ -11,8 +11,20 @@
 </head>
 <body>
 
-  <div id="app" class="container mt-5">
+  <div id="app" class="container">
     <h1 class="text-center">PHP Dischi Json</h1>
+    <div v-if="albums.length > 0" class="row justify-content-center">
+      <div class="col-md-4 col-lg-3 mb-4" v-for="album in albums" :key="album.title">
+        <div class="card mt-4 h-100">
+          <img :src="album.poster" class="card-img-top" alt="Poster">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ album.title }}</h5>
+            <p class="card-text">{{ album.author }}</p>
+            <p class="card-text">{{ album.year }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- VueJS script -->
@@ -20,6 +32,6 @@
   <!-- Axios script -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!-- Custom script -->
-  <script type="module" src="./js/app.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>
