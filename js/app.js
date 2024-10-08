@@ -4,8 +4,14 @@ createApp({
   data() {
     return {
         // Lista dei dischi che verrà popolata tramite la chiamata API
-      albums: []
+      albums: [],
+      selectedAlbum: {}
     };
+  },
+  methods: {
+    showAlbumDetails(album) {
+      this.selectedAlbum = album;
+    }
   },
   mounted() {
 

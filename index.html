@@ -21,6 +21,26 @@
             <h5 class="card-title">{{ album.title }}</h5>
             <p class="card-text">{{ album.author }}</p>
             <p class="card-text">{{ album.year }}</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#albumModal" @click="showAlbumDetails(album)">Mostra dettagli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="albumModal" tabindex="-1" aria-labelledby="albumModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="albumModalLabel">{{ selectedAlbum.title }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img :src="selectedAlbum.poster" class="img-fluid mb-3" alt="Poster">
+            <p><strong>Autore:</strong> {{ selectedAlbum.author }}</p>
+            <p><strong>Anno:</strong> {{ selectedAlbum.year }}</p>
+            <p><strong>Genere:</strong> {{ selectedAlbum.genre }}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
           </div>
         </div>
       </div>
@@ -31,6 +51,10 @@
   <script src="https://unpkg.com/vue@3"></script>
   <!-- Axios script -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Bootstrap script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+  crossorigin="anonymous"></script>
   <!-- Custom script -->
   <script src="./js/app.js"></script>
 </body>
